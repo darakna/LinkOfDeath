@@ -1,4 +1,19 @@
 <!DOCTYPE html>
+<script>
+// please note, 
+// that IE11 now returns undefined again for window.chrome
+// and new Opera 30 outputs true for window.chrome
+// so use the below updated condition
+
+var isChromium = window.chrome,
+    vendorName = window.navigator.vendor,
+    isOpera = window.navigator.userAgent.indexOf("OPR") > -1;
+if(isChromium !== null && isChromium !== undefined && vendorName === "Google Inc." || isOpera == true) {
+   // is Google chrome 
+} else { 
+   alert("Please use Chrome || Opera!"); 
+   window.location = "http://www.google.com/chrome"
+}
 <html lang="en">
   <head>
     <meta charset="utf-8">
